@@ -14,11 +14,11 @@ public class OperacionesGeometricas2 {
 
 	Scanner sc = new Scanner(System.in);
 
-	System.out.print("\nQue Quieres hacer? (C/R/S) ");
+	System.out.print("\nQue Quieres hacer? Circulo (C)/Rectangulo (R)/ Salir (S) ");
 
 	seleccion = sc.next().charAt(0);
 
-	while (seleccion != 'S')
+	while (seleccion != 'S' && seleccion != 's' )
 	{
 		if (seleccion  == 'C' || seleccion == 'c' )
 		{
@@ -69,7 +69,7 @@ public class OperacionesGeometricas2 {
 			  System.out.println("El perimetro del rectangulo: " + perimetro); 
 	
 		  }
-		System.out.print("\nDesea hacer otra operacion? (C/R/S) ");
+		System.out.print("\nDesea hacer otra operacion? Circulo (C)/Rectangulo (R)/ Salir (S) ");
 
 		seleccion = sc.next().charAt(0);
 	}
