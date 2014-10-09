@@ -1,7 +1,9 @@
-package  com.zubiri.geometria;
-
 
 import java.util.Scanner;
+import com.zubiri.geometria.Circulo;
+import com.zubiri.geometria.Rectangulo;
+
+//CLASSPAHT=:/home/zubiri/ProyectosJava; export CLASSPATH
 
 public class OperacionesGeometricas {
 
@@ -12,69 +14,60 @@ public class OperacionesGeometricas {
 
 	Scanner sc = new Scanner(System.in);
 
-	System.out.print("\nIntroduce Circulo o Rectangulo");
+	System.out.print("\nQue quieres hacer ? (Circulo,Rectangulo o Terminar) ");
 
 	seleccion = sc.next();
 
+		if (seleccion.equalsIgnoreCase("Circulo") == true )
+		{
 
-	if (seleccion.equals("Circulo"))
-	{
-
-		float numero1, resultadoArea, resultadoCircun;
-		Circulo operaciones = new Circulo();
+			double radio;
+			double result;
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("\ningresa un número: ");
-		numero1 = sc.nextFloat();
-		operaciones.setRadio(numero1);
+		
+		
+			System.out.print("\ningresa un número: ");
+			radio = sc.nextDouble();
+			Circulo circulo = new Circulo(radio);
 
-		resultadoArea = operaciones.getArea();
-		resultadoCircun = operaciones.getCircu();
-
-		System.out.println("\nEl resultado del AREA es: " + resultadoArea);
-		System.out.println("\nEl resultado de la CIRCUNFERENCIA es: " + resultadoCircun);
+			result = circulo.Circunferencia();
+			System.out.println("\nEl resultado de la CIRCUNFERENCIA es: " + result);
 	
-		System.out.println("\n\nEGUN ONA IZAN!!\n");
-
-	}
+			result = circulo.Area();
+			System.out.println("\nEl resultado del AREA es: " + result);
+		
 	
-	else if (seleccion.equals("Rectangulo"))
-	{
-
-		  double altura;
-		  double base;
-		  double result;
-
-		  Rectangulo rectangulo= new Rectangulo();
-		  System.out.print("Estamos trabajando con un rectangulo");
-
-		  Scanner sc = new Scanner(System.in);
-		  System.out.print("\ningresa la altura: ");
-		  altura = sc.nextDouble();
-
-		  System.out.print("\ningresa la base: ");
-		  base = sc.nextDouble();
-		  
-		  rectangulo.setAltura(altura);
-		  rectangulo.setBase(base);
-
+		}
 	
-		  result =  rectangulo.area();
-		  System.out.println("El area del rectangulo: " + result); 
+		else 
+		{
+
+			  double altura;
+			  double base;
+			  double area;
+			  double perimetro;
+
+			  
+			  System.out.print("Estamos trabajando con un rectangulo");
+
+			  
+			  System.out.print("\ningresa la altura: ");
+			  altura = sc.nextDouble();
+
+			  System.out.print("\ningresa la base: ");
+			  base = sc.nextDouble();
+			  
+			  Rectangulo rectangulo= new Rectangulo(altura,base);
+	 		  area = rectangulo.area();
+	
+			  
+			  System.out.println("El area del rectangulo: " + area); 
 			
-		  result =  rectangulo.perimetro();
-		  System.out.println("El perimetro del rectangulo: " + result); 
+			  perimetro =  rectangulo.perimetro();
+			  System.out.println("El perimetro del rectangulo: " + perimetro); 
 	
-	  }
+		  }
 
-	else 
-	
-	{
-	
-
-	System.out.println("la introduccion ha sido incorrecta");
-
-	}
 
     }
 }
